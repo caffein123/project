@@ -197,10 +197,10 @@ def send_message(title,sender_list,sender_lists,start_noti,video_url):
     rtime = 'rtime=' + str(start_noti.strftime("%H")) + str(start_noti.strftime("%M"))
     print('> '+title)
     for sender in sender_list:
-        print('{0} 님에게 {1} {2}시 {3}분'.format(str(sender),start_noti.strftime("%Y%m%d"),start_noti.strftime("%H"),str(start_noti.strftime("%M"))))
+        print('{0} 님에게 문자를 전송하였습니다.'.format(str(sender)))
     msg = 'msg=' + str(video_url)
 
-    r = requests.post('http://apis.aligo.in/send?' + key + '&' + user_id + '&' + sender + '&' + receiver + '&' + msg + '&' + rdate + '&' + rtime,
+    r = requests.post('http://apis.aligo.in/send?' + key + '&' + user_id + '&' + sender + '&' + receiver + '&' + msg,
                       json=[], headers=headers)
     # print(r.elapsed.total_seconds())
     # print(r.headers)
